@@ -41,7 +41,7 @@ const FlightSearch = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     setIsSearched(true);
-    fetch("http://localhost:3000/flights", {
+    fetch("https://amadeus-case-study-flight-search-app.onrender.com/flights", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
