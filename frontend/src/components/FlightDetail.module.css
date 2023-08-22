@@ -1,0 +1,18 @@
+.show {
+  display: block;
+  margin-top: 1rem;
+}
+.hide {
+  display: none;
+}
+.firma {
+  margin-top: 0.7rem;
+  font-weight: 700;
+  font-size: 14px;
+}
+.detail {
+  font-size: 12px;
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}

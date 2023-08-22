@@ -1,10 +1,19 @@
-import classes from "./ReturningFlight.module.css";
+import classes from "./Flights.module.css";
+import FlightDetail from "./FlightDetail";
+import { useState } from "react";
+const ReturningFlight = ({ flights, direction }) => {
+  const [showDetail, setShowDetail] = useState("");
 
-const ReturningFlight = ({ flights }) => {
+  const clickHandler = (e) => {
+    if (e.target.id === showDetail) setShowDetail("");
+    else {
+      setShowDetail(e.target.id);
+    }
+  };
   return (
     <div>
       <div className={classes.heading}>
-        <h2>Dönüş Uçuşları</h2>
+        <h2>{direction} Uçuşları</h2>
         <p>
           {new Intl.DateTimeFormat("tr-TR", {
             year: "numeric",
@@ -34,6 +43,14 @@ const ReturningFlight = ({ flights }) => {
               </div>
               <p className={classes.fiyat}>{flight.fiyat}</p>
             </div>
+            <button
+              id={flight.id}
+              onClick={clickHandler}
+              className={classes.detay}
+            >
+              Detay
+            </button>
+            <FlightDetail flight={flight} show={showDetail === flight.id} />
           </li>
         ))}
       </ul>

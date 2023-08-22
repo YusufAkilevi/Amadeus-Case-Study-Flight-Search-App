@@ -5,6 +5,9 @@
   margin-bottom: 1rem;
   color: #051422;
 }
+.heading p {
+  font-weight: 700;
+}
 
 .flights {
   list-style: none;
@@ -23,7 +26,6 @@
   grid-column: 1 / -1;
   background-color: #a5d8ff;
 }
-
 .flight {
   grid-column: 1 / -1;
   align-content: center;
@@ -49,4 +51,15 @@
 }
 .uçuşSüresi {
   font-size: 12px;
+}
+.detay {
+  display: inline-block;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  color: #1864ab;
+}
+.detay:hover {
+  text-decoration: underline;
 }

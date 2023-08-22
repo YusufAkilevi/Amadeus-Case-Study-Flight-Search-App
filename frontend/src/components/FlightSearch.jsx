@@ -18,12 +18,16 @@ const autoCompleteOptions = [
 
 const FlightSearch = (props) => {
   const [isSearched, setIsSearched] = useState(false);
-  const [direction, setDirection] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [direction, setDirection] = useState("one-way");
   const [kalkışYeri, setKalkışYeri] = useState("");
   const [varışYeri, setVarışYeri] = useState("");
   const [gidişTarihi, setGidişTarihi] = useState("");
   const [dönüşTarihi, setDönüşTarihi] = useState("");
 
+  useEffect(() => {
+    props.onGetIsLoading(isLoading);
+  }, [isLoading]);
   useEffect(() => {
     props.onGetIsSearched(isSearched);
   }, [isSearched]);
@@ -40,6 +44,7 @@ const FlightSearch = (props) => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     setIsSearched(true);
     fetch("http://localhost:3000/flights", {
       method: "POST",
@@ -54,6 +59,7 @@ const FlightSearch = (props) => {
       .then((response) => response.json())
       .then((data) => {
         props.onGetFlights(data);
+        setIsLoading(false);
       });
   };
 
@@ -67,6 +73,7 @@ const FlightSearch = (props) => {
               type="radio"
               name="direction"
               value="one-way"
+              defaultChecked
             />
             <label htmlFor="">Tek Yön</label>
           </div>

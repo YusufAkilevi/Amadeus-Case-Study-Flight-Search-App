@@ -1,39 +1,49 @@
-import { useEffect, useState } from "react";
 import classes from "./FlightList.module.css";
-import OutboundFlight from "./OutBoundFlight";
-import ReturningFlight from "./ReturningFlight";
-const FlightList = ({ flightsData, isSearched }) => {
+import Flights from "./Flights";
+import Loading from "./UI/Loading";
+const FlightList = ({ flightsData, isSearched, isLoading }) => {
   const isThereFlight =
     flightsData.gidişUçuşları.length > 0 ||
     flightsData.dönüşUçuşları.length > 0;
 
   return (
     <div className={classes.container}>
-      {isSearched && !isThereFlight && (
-        <p style={{ textAlign: "center", fontWeight: "700" }}>
-          Aradığınız kriterlere göre uçuş bulunamadı.
-        </p>
-      )}
-      {!isSearched && !isThereFlight && (
-        <p style={{ textAlign: "center", fontWeight: "700" }}>
-          Uçak bileti ara!
-        </p>
-      )}
-      {isSearched && isThereFlight && (
-        <div
-          className={
-            flightsData.dönüşUçuşları.length > 0
-              ? classes.flightListBoth
-              : classes.flightListOne
-          }
-        >
-          {flightsData.gidişUçuşları.length > 0 && (
-            <OutboundFlight flights={flightsData.gidişUçuşları} />
+      {isLoading && <Loading />}
+      {!isLoading && (
+        <>
+          {isSearched && !isThereFlight && (
+            <p style={{ textAlign: "center", fontWeight: "700" }}>
+              Aradığınız kriterlere göre uçuş bulunamadı.
+            </p>
           )}
-          {flightsData.dönüşUçuşları.length > 0 && (
-            <ReturningFlight flights={flightsData.dönüşUçuşları} />
+          {!isSearched && !isThereFlight && (
+            <p style={{ textAlign: "center", fontWeight: "700" }}>
+              Uçak bileti ara!
+            </p>
           )}
-        </div>
+          {isSearched && isThereFlight && (
+            <div
+              className={
+                flightsData.dönüşUçuşları.length > 0
+                  ? classes.flightListBoth
+                  : classes.flightListOne
+              }
+            >
+              {flightsData.gidişUçuşları.length > 0 && (
+                <Flights
+                  flights={flightsData.gidişUçuşları}
+                  direction="Gidiş"
+                />
+              )}
+              {flightsData.dönüşUçuşları.length > 0 && (
+                <Flights
+                  flights={flightsData.dönüşUçuşları}
+                  direction="Dönüş"
+                />
+              )}
+            </div>
+          )}
+        </>
       )}
     </div>
   );

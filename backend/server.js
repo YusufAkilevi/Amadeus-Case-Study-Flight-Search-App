@@ -29,8 +29,9 @@ app.post("/flights", (req, res) => {
     }
   });
   console.log(dönüşUçuşları);
-
-  res.json({ gidişUçuşları, dönüşUçuşları });
+  setTimeout(() => {
+    res.json({ gidişUçuşları, dönüşUçuşları });
+  }, 3000);
 });
 
 app.listen(3000, () => console.log("App is running on port 3000"));

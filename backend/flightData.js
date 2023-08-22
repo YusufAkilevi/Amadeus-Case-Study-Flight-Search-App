@@ -1,6 +1,7 @@
 const flights = [
   {
     id: "1",
+    firma: "Pegasus",
     nereden: "Ankara",
     nereye: "İstanbul",
     gidişTarihi: new Date("2023-08-23").toLocaleDateString(),
@@ -11,6 +12,8 @@ const flights = [
   },
   {
     id: "2",
+    firma: "Pegasus",
+
     nereden: "Ankara",
     nereye: "İstanbul",
     gidişTarihi: new Date("2023-08-23").toLocaleDateString(),
@@ -20,6 +23,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "3",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -30,6 +35,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "4",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -40,6 +47,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "5",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -50,6 +59,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "6",
     nereden: "İstanbul",
     nereye: "Ankara",
@@ -60,6 +71,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "7",
     nereden: "İstanbul",
     nereye: "Ankara",
@@ -70,6 +83,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "8",
     nereden: "İstanbul",
     nereye: "Ankara",
@@ -80,6 +95,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "9",
     nereden: "İstanbul",
     nereye: "Ankara",
@@ -90,6 +107,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "10",
     nereden: "İstanbul",
     nereye: "Ankara",
@@ -100,6 +119,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "11",
     nereden: "Ankara",
     nereye: "Antalya",
@@ -110,6 +131,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "12",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -120,6 +143,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "13",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -130,6 +155,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "14",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -140,6 +167,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "15",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -150,6 +179,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "16",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -160,6 +191,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "17",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -170,6 +203,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "18",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -180,6 +215,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "19",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -190,6 +227,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "20",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -200,6 +239,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "21",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -210,6 +251,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "22",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -220,6 +263,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "23",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -230,6 +275,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "24",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -240,6 +287,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "25",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -250,6 +299,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "26",
     nereden: "Ankara",
     nereye: "İstanbul",
@@ -260,6 +311,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "27",
     nereden: "Antalya",
     nereye: "Ankara",
@@ -270,6 +323,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "28",
     nereden: "Adana",
     nereye: "Ankara",
@@ -280,6 +335,8 @@ const flights = [
     fiyat: "900₺",
   },
   {
+    firma: "Pegasus",
+
     id: "29",
     nereden: "Adana",
     nereye: "Ankara",
@@ -290,6 +347,8 @@ const flights = [
     fiyat: "900₺",
   },
   {
+    firma: "Pegasus",
+
     id: "30",
     nereden: "Antalya",
     nereye: "Ankara",
@@ -300,6 +359,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "31",
     nereden: "Adana",
     nereye: "Ankara",
@@ -310,6 +371,8 @@ const flights = [
     fiyat: "900₺",
   },
   {
+    firma: "Pegasus",
+
     id: "32",
     nereden: "Adana",
     nereye: "Ankara",
@@ -320,6 +383,8 @@ const flights = [
     fiyat: "900₺",
   },
   {
+    firma: "Pegasus",
+
     id: "33",
     nereden: "Antalya",
     nereye: "Ankara",
@@ -330,6 +395,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "34",
     nereden: "Adana",
     nereye: "Ankara",
@@ -340,6 +407,8 @@ const flights = [
     fiyat: "900₺",
   },
   {
+    firma: "Pegasus",
+
     id: "35",
     nereden: "Adana",
     nereye: "Ankara",
@@ -350,6 +419,8 @@ const flights = [
     fiyat: "900₺",
   },
   {
+    firma: "Pegasus",
+
     id: "36",
     nereden: "Antalya",
     nereye: "Ankara",
@@ -360,6 +431,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "37",
     nereden: "Antalya",
     nereye: "Ankara",
@@ -370,6 +443,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "38",
     nereden: "Antalya",
     nereye: "Ankara",
@@ -380,6 +455,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "39",
     nereden: "Antalya",
     nereye: "Ankara",
@@ -390,6 +467,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "40",
     nereden: "Antalya",
     nereye: "Ankara",
@@ -401,6 +480,8 @@ const flights = [
   },
   ,
   {
+    firma: "Pegasus",
+
     id: "41",
     nereden: "Ankara",
     nereye: "Antalya",
@@ -411,6 +492,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "42",
     nereden: "Ankara",
     nereye: "Antalya",
@@ -421,6 +504,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "43",
     nereden: "Ankara",
     nereye: "Antalya",
@@ -431,6 +516,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "44",
     nereden: "Ankara",
     nereye: "Antalya",
@@ -441,6 +528,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "45",
     nereden: "Ankara",
     nereye: "Antalya",
@@ -451,6 +540,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "46",
     nereden: "Ankara",
     nereye: "Antalya",
@@ -461,6 +552,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "47",
     nereden: "Ankara",
     nereye: "Antalya",
@@ -471,6 +564,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "48",
     nereden: "Ankara",
     nereye: "Antalya",
@@ -481,6 +576,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "49",
     nereden: "Ankara",
     nereye: "Bursa",
@@ -491,6 +588,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "50",
     nereden: "Ankara",
     nereye: "Bursa",
@@ -501,6 +600,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "51",
     nereden: "Ankara",
     nereye: "Bursa",
@@ -511,6 +612,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "52",
     nereden: "Ankara",
     nereye: "Bursa",
@@ -521,6 +624,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "53",
     nereden: "Ankara",
     nereye: "Bursa",
@@ -531,6 +636,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "54",
     nereden: "Ankara",
     nereye: "İzmir",
@@ -541,6 +648,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "55",
     nereden: "İzmir",
     nereye: "Ankara",
@@ -551,6 +660,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "56",
     nereden: "Ankara",
     nereye: "İzmir",
@@ -561,6 +672,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "57",
     nereden: "İzmir",
     nereye: "Ankara",
@@ -571,6 +684,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "57",
     nereden: "Ankara",
     nereye: "İzmir",
@@ -581,6 +696,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "58",
     nereden: "İzmir",
     nereye: "Ankara",
@@ -591,6 +708,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "59",
     nereden: "Ankara",
     nereye: "İzmir",
@@ -601,6 +720,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "60",
     nereden: "İzmir",
     nereye: "Ankara",
@@ -611,6 +732,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "61",
     nereden: "Ankara",
     nereye: "İzmir",
@@ -621,6 +744,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "62",
     nereden: "İzmir",
     nereye: "Ankara",
@@ -631,6 +756,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "63",
     nereden: "Ankara",
     nereye: "İzmir",
@@ -641,6 +768,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "64",
     nereden: "İzmir",
     nereye: "Ankara",
@@ -651,6 +780,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "65",
     nereden: "İstanbul",
     nereye: "İzmir",
@@ -661,6 +792,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "66",
     nereden: "İzmir",
     nereye: "İstanbul",
@@ -671,6 +804,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "67",
     nereden: "İstanbul",
     nereye: "İzmir",
@@ -681,6 +816,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "68",
     nereden: "İzmir",
     nereye: "İstanbul",
@@ -691,6 +828,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "69",
     nereden: "İstanbul",
     nereye: "İzmir",
@@ -701,6 +840,8 @@ const flights = [
     fiyat: "1200₺",
   },
   {
+    firma: "Pegasus",
+
     id: "70",
     nereden: "İzmir",
     nereye: "İstanbul",
