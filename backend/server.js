@@ -8,7 +8,6 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/flights", (req, res) => {
-  console.log(req.body);
   const gidişUçuşları = flights.filter((flight) => {
     if (
       flight.nereden === req.body.kalkışYeri &&
