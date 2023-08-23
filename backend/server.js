@@ -18,7 +18,6 @@ app.post("/flights", (req, res) => {
       return flight;
     }
   });
-  console.log(gidişUçuşları);
   const dönüşUçuşları = flights.filter((flight) => {
     if (
       flight.nereden === req.body.varışYeri &&
@@ -28,10 +27,8 @@ app.post("/flights", (req, res) => {
       return flight;
     }
   });
-  console.log(dönüşUçuşları);
-  setTimeout(() => {
-    res.json({ gidişUçuşları, dönüşUçuşları });
-  }, 3000);
+
+  res.json({ gidişUçuşları, dönüşUçuşları });
 });
 
 app.listen(3000, () => console.log("App is running on port 3000"));
