@@ -8,6 +8,11 @@
 .heading p {
   font-weight: 700;
 }
+.heading span {
+  font-weight: 500;
+  font-size: 20px;
+  color: #777;
+}
 
 .flights {
   list-style: none;

@@ -11,9 +11,16 @@ import {
 
 import SortButtons from "../SortButtons/SortButtons";
 
-const Flights = ({ flights, direction }) => {
+const Flights = ({ flights }) => {
   const [showDetail, setShowDetail] = useState("");
   const [sortParam, setSortParam] = useState("");
+
+  const direction = (
+    <h2>
+      {flights[0].departureAirport.city} <span>to</span>{" "}
+      {flights[0].arrivalAirport.city}
+    </h2>
+  );
 
   const detailsClickHandler = (e) => {
     if (e.target.id === showDetail) {
@@ -31,7 +38,7 @@ const Flights = ({ flights, direction }) => {
   return (
     <div>
       <div className={classes.heading}>
-        <h2>{direction}</h2>
+        {direction}
         <p>{formatFlightDate(flights[0].departureTime)}</p>
       </div>
       <SortButtons sortParam={sortParam} onSort={sortButtonHandler} />

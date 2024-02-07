@@ -3,7 +3,6 @@ const cors = require("cors");
 
 const { generateFlightsForFebruary } = require("./data/generateFlightData");
 
-// const flights = require("./data/flights.json");
 const flights = generateFlightsForFebruary();
 
 const airports = require("./data/airports.json");

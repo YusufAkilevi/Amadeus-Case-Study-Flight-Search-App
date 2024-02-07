@@ -13,14 +13,10 @@ const FlightList = ({ flightsData, isSearched, isLoading }) => {
       {!isLoading && (
         <>
           {isSearched && !isThereFlight && (
-            <p style={{ textAlign: "center", fontWeight: "700" }}>
-              Flights could not be found.
-            </p>
+            <p className={classes.feedback}>Flights could not be found.</p>
           )}
           {!isSearched && !isThereFlight && (
-            <p style={{ textAlign: "center", fontWeight: "700" }}>
-              Search Flights!
-            </p>
+            <p className={classes.feedback}>Search Flights!</p>
           )}
           {isSearched && isThereFlight && (
             <div
@@ -31,16 +27,10 @@ const FlightList = ({ flightsData, isSearched, isLoading }) => {
               }
             >
               {flightsData.departureFlights.length > 0 && (
-                <Flights
-                  flights={flightsData.departureFlights}
-                  direction={`${flightsData.departureFlights[0].departureAirport.city} to ${flightsData.departureFlights[0].arrivalAirport.city}`}
-                />
+                <Flights flights={flightsData.departureFlights} />
               )}
               {flightsData.returnFlights.length > 0 && (
-                <Flights
-                  flights={flightsData.returnFlights}
-                  direction={`${flightsData.returnFlights[0].departureAirport.city} to ${flightsData.returnFlights[0].arrivalAirport.city}`}
-                />
+                <Flights flights={flightsData.returnFlights} />
               )}
             </div>
           )}

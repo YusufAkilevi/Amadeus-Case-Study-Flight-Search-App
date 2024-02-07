@@ -14,3 +14,7 @@ export const SORTINGTYPES = {
   PRICE: "price",
   DURATION: "duration",
 };
+export const DATEPICKER = {
+  ARRIVAL: "arrival-date",
+  DEPARTURE: "departure-date",
+};

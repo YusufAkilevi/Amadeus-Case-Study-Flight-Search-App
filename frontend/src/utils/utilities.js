@@ -53,3 +53,18 @@ export const sortFlights = (flights, sortParam) => {
 
   return sortedFlights;
 };
+
+export const getAirportOptions = async (query, setOptions) => {
+  if (query.length !== 0) {
+    const res = await fetch(
+      `http://localhost:3000/airports?query=${query.toLowerCase()}`
+    );
+    if (!res.ok) return;
+
+    const data = await res.json();
+
+    setOptions(data);
+  } else {
+    setOptions([]);
+  }
+};
