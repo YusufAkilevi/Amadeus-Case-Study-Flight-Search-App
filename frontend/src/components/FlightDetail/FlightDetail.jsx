@@ -1,17 +1,15 @@
-import SouthIcon from "@mui/icons-material/South";
 import classes from "./FlightDetail.module.css";
+import { formatFlightTime } from "../../utils/utilities";
 
 const FlightDetail = ({ flight, show }) => {
   return (
-    <div className={show ? classes.show : classes.hide}>
+    <div
+      className={show ? `${classes.detail} ${classes.show}` : classes.detail}
+    >
       <div className={classes.container}>
         <div className={classes["flight-info"]}>
           <span className={classes.time}>
-            {new Date(flight.departureTime).toLocaleString("en-UK", {
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: false, // or false for 24-hour format
-            })}
+            {formatFlightTime(flight.departureTime)}
           </span>
           <span className={classes.city}>{flight.departureAirport.city}</span>
         </div>
@@ -23,11 +21,7 @@ const FlightDetail = ({ flight, show }) => {
         </div>
         <div className={classes["flight-info"]}>
           <span className={classes.time}>
-            {new Date(flight.arrivalTime).toLocaleString("en-UK", {
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: false, // or false for 24-hour format
-            })}
+            {formatFlightTime(flight.arrivalTime)}
           </span>
           <span className={classes.city}>{flight.arrivalAirport.city}</span>
         </div>
