@@ -12,7 +12,7 @@
 .flights {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 3fr 3fr 3fr 2fr 2fr;
   row-gap: 1rem;
 }
 .headings {
@@ -22,7 +22,7 @@
   border-radius: 7px;
   padding: 0.5rem 1rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 3fr 3fr 3fr 2fr 2fr;
   grid-column: 1 / -1;
   background-color: #a5d8ff;
 }
@@ -36,23 +36,32 @@
 }
 .flightInfo {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 3fr 3fr 3fr 2fr 2fr;
   align-items: center;
 }
-.kalkışSaati,
-.varışSaati,
-.fiyat {
+.departure-time,
+.arrival-time,
+.price {
   font-weight: 700;
 }
-.kalkışYeri,
-.varışYeri {
+.airport {
   margin-top: 0.3rem;
   font-size: 12px;
+  display: flex;
+  flex-direction: column;
 }
-.uçuşSüresi {
-  font-size: 12px;
+.duration {
+  font-size: 8px;
+  margin-top: 5px;
 }
-.detay {
+.duration span {
+  font-weight: bold;
+}
+.details {
+  display: flex;
+  justify-content: flex-end;
+}
+.detail-button {
   display: inline-block;
   margin-top: 0.5rem;
   cursor: pointer;
@@ -60,6 +69,13 @@
   background-color: #fff;
   color: #1864ab;
 }
-.detay:hover {
+.detail-button:hover {
   text-decoration: underline;
+}
+.code {
+  font-size: 14px;
+  font-weight: bold;
+}
+.city {
+  font-size: 10px;
 }

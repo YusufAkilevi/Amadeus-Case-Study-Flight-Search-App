@@ -1,18 +1,55 @@
 .show {
-  display: block;
+  display: flex;
+  gap: 2rem;
   margin-top: 1rem;
 }
 .hide {
   display: none;
 }
-.firma {
-  margin-top: 0.7rem;
-  font-weight: 700;
-  font-size: 14px;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.detail {
-  font-size: 12px;
-  margin-top: 0.5rem;
+.flight-info {
   display: flex;
   gap: 1rem;
+  align-items: center;
+}
+.time {
+  font-weight: 700;
+}
+.city {
+  font-weight: 500;
+  font-size: 12px;
+}
+.line {
+  width: 1px;
+  height: 100px;
+  background-color: black;
+}
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 10px;
+}
+.airport {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+}
+.airline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.code {
+  font-size: 10px;
+  font-weight: 500;
+}
+.airline {
+  font-size: 12px;
+  font-weight: 500;
 }

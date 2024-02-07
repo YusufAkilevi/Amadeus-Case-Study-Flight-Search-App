@@ -1,22 +1,18 @@
+import { useState } from "react";
+import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
+
 import classes from "./Flights.module.css";
 import FlightDetail from "../FlightDetail/FlightDetail";
-import { useState } from "react";
-
 const Flights = ({ flights, direction }) => {
   const [showDetail, setShowDetail] = useState("");
 
   const clickHandler = (e) => {
-    if (e.target.id === showDetail) setShowDetail("");
-    else {
+    if (e.target.id === showDetail) {
+      setShowDetail("");
+    } else {
       setShowDetail(e.target.id);
     }
   };
-  console.log(
-    flights,
-    new Date(flights[0].departureTime),
-    new Date(flights[0].departureTime).getHours(),
-    new Date(flights[0].departureTime).getMinutes()
-  );
   return (
     <div>
       <div className={classes.heading}>
@@ -32,46 +28,70 @@ const Flights = ({ flights, direction }) => {
       <ul className={classes.flights}>
         <div key="title" className={classes.headings}>
           <p>Departure Time</p>
-          <p>Duration</p>
+          <div></div>
           <p>Arrival Time</p>
           <p>Price</p>
+          <div></div>
         </div>
         {flights.map((flight) => (
-          <li className={classes.flight} key={flight.code}>
+          <li className={classes.flight} key={flight.flightCode}>
             <div className={classes.flightInfo}>
               <div>
-                <p className={classes.kalkışSaati}>
-                  {new Date(flight.departureTime).toLocaleString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
+                <p className={classes["departure-time"]}>
+                  {new Date(flight.departureTime).toLocaleString("en-UK", {
                     hour: "2-digit",
                     minute: "2-digit",
-                    second: "2-digit",
-                    hour12: true, // or false for 24-hour format
+                    hour12: false, // or false for 24-hour format
                   })}
                 </p>
-                <p className={classes.kalkışYeri}>
-                  {flight.departureAirport.name}
+                <div className={classes.airport}>
+                  <span className={classes.code}>
+                    {flight.departureAirport.code}
+                  </span>
+                  <span className={classes.city}>
+                    {flight.departureAirport.city}
+                  </span>
+                </div>
+              </div>
+              <div className={classes["destination-icon"]}>
+                <TrendingFlatIcon />
+                <p className={classes.duration}>
+                  Flight duration <span>{flight.duration}</span>
                 </p>
               </div>
-              <p className={classes.uçuşSüresi}>{flight.duration}</p>
               <div>
-                <p className={classes.varışSaati}>{flight.arrivalTime}</p>
-                <p className={classes.varışYeri}>
-                  {flight.arrivalAirport.name}
+                <p className={classes["arrival-time"]}>
+                  {new Date(flight.arrivalTime).toLocaleString("en-UK", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false, // or false for 24-hour format
+                  })}
                 </p>
+                <div className={classes.airport}>
+                  <span className={classes.code}>
+                    {flight.arrivalAirport.code}
+                  </span>
+                  <span className={classes.city}>
+                    {flight.arrivalAirport.city}
+                  </span>
+                </div>
               </div>
-              <p className={classes.fiyat}>{flight.price}</p>
+              <p className={classes.price}>TRY {flight.price}</p>
+              <div className={classes.details}>
+                <button
+                  id={flight.flightCode}
+                  onClick={clickHandler}
+                  className={classes["detail-button"]}
+                >
+                  Details
+                </button>
+              </div>
             </div>
-            <button
-              id={flight.code}
-              onClick={clickHandler}
-              className={classes.detay}
-            >
-              Details
-            </button>
-            <FlightDetail flight={flight} show={showDetail === flight.code} />
+
+            <FlightDetail
+              flight={flight}
+              show={showDetail === flight.flightCode}
+            />
           </li>
         ))}
       </ul>
