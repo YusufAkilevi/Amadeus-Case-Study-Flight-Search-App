@@ -48,7 +48,7 @@ In the other terminal, start the Node.js server for the backend:
 
 ## Supported Airports and Cities
 
-Our flight search app is designed to help you find flights to and from a select list of airports around the world. To ensure the best user experience, we currently support searches involving the following airports and their respective cities. Please note that our app's functionality is limited to these locations at this time.
+The flight search app is designed to help you find flights to and from a select list of airports around the world. To ensure the best user experience, the app currently support searches involving the following airports and their respective cities. Please note that the app's functionality is limited to these locations at this time.
 
 ### Asia
 
@@ -114,7 +114,7 @@ Our flight search app is designed to help you find flights to and from a select 
 - **ADB** - Adnan Menderes Airport, İzmir
 - **NAV** - Kapadokya Airport, Nevşehir
 
-Please ensure your flight search queries involve these airports to guarantee accurate search results. We are constantly working to expand our list of supported airports and appreciate your understanding.
+Please ensure your flight search queries involve these airports to guarantee accurate search results. 
 
 ## Overview
 
@@ -148,6 +148,12 @@ Bir uçuş arama uygulaması için frontend application geliştirilecek.
 
 - Solution URL: [https://github.com/YusufAkilevi/Amadeus-Case-Study-Flight-Search-App](https://github.com/YusufAkilevi/Amadeus-Case-Study-Flight-Search-App)
 - Live URL: [https://flight-search-app-yakilevs.netlify.app/](https://flight-search-app-yakilevs.netlify.app/)
+  
+## Hosting Note
+
+Please be aware that this application is hosted on a platform using a **free plan**. Due to the nature of free hosting services, the server may become inactive during periods of inactivity. As a result, when accessing the app after it has been idle, there might be a delay (approximately 50 seconds or so) while the server starts up again.
+
+
 
 ## My process
 
