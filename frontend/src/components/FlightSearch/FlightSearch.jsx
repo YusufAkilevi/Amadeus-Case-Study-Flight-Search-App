@@ -42,6 +42,7 @@ const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
 
   const placeChangeHandler = async (e) => {
     const { value, id } = e.target;
+    console.log("clicke");
     if (id === DIRECTIONS.DEPARTURE) {
       await getAirportOptions(value, setDepartureAirportOptions);
     } else if (id === DIRECTIONS.ARRIVAL) {

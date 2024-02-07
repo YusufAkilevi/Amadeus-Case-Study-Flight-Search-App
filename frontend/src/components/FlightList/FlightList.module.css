@@ -6,12 +6,8 @@
   margin-bottom: 2rem;
   color: #051422;
 }
-.flightListBoth {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 2rem;
-}
-.flightListOne {
+
+.flight-list {
   display: grid;
   grid-template-columns: 1fr;
 }
