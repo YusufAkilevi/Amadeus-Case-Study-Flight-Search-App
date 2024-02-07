@@ -70,9 +70,12 @@ function generateFlightsForFebruary() {
 const flights = generateFlightsForFebruary();
 
 // Optionally, write the flights to a JSON file
-fs.writeFile("flights.json", JSON.stringify(flights, null, 2), (err) => {
-  if (err) throw err;
-  console.log(
-    "Flight data for February 2024 generated and saved to flights.json"
-  );
-});
+// fs.writeFile("flights.json", JSON.stringify(flights, null, 2), (err) => {
+//   if (err) throw err;
+//   console.log(
+//     "Flight data for February 2024 generated and saved to flights.json"
+//   );
+// });
+module.exports = {
+  generateFlightsForFebruary,
+};
