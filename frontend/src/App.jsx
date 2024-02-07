@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./App.css";
-import FlightList from "./components/FlightList";
-import FlightSearch from "./components/FlightSearch";
+import FlightList from "./components/FlightList/FlightList";
+import FlightSearch from "./components/FlightSearch/FlightSearch";
 
 function App() {
   const [isSearched, setIsSearched] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [flightsData, setFlightsData] = useState({
-    gidişUçuşları: [],
-    dönüşUçuşları: [],
+    departureFlights: [],
+    returnFlights: [],
   });
 
   const getFlightsData = (flights) => {

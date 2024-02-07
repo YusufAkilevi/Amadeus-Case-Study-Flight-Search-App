@@ -1,10 +1,12 @@
 import classes from "./FlightList.module.css";
-import Flights from "./Flights";
-import Loading from "./UI/Loading";
+import Flights from "../Flights/Flights";
+import Loading from "../Loading/Loading";
+import { useEffect } from "react";
+
 const FlightList = ({ flightsData, isSearched, isLoading }) => {
   const isThereFlight =
-    flightsData.gidişUçuşları.length > 0 ||
-    flightsData.dönüşUçuşları.length > 0;
+    flightsData.departureFlights.length > 0 ||
+    flightsData.returnFlights.length > 0;
 
   return (
     <div className={classes.container}>
@@ -13,32 +15,32 @@ const FlightList = ({ flightsData, isSearched, isLoading }) => {
         <>
           {isSearched && !isThereFlight && (
             <p style={{ textAlign: "center", fontWeight: "700" }}>
-              Aradığınız kriterlere göre uçuş bulunamadı.
+              Flights could not be found.
             </p>
           )}
           {!isSearched && !isThereFlight && (
             <p style={{ textAlign: "center", fontWeight: "700" }}>
-              Uçak bileti ara!
+              Search Flights!
             </p>
           )}
           {isSearched && isThereFlight && (
             <div
               className={
-                flightsData.dönüşUçuşları.length > 0
+                flightsData.returnFlights.length > 0
                   ? classes.flightListBoth
                   : classes.flightListOne
               }
             >
-              {flightsData.gidişUçuşları.length > 0 && (
+              {flightsData.departureFlights.length > 0 && (
                 <Flights
-                  flights={flightsData.gidişUçuşları}
-                  direction="Gidiş"
+                  flights={flightsData.departureFlights}
+                  direction={`${flightsData.departureFlights[0].departureAirport.city} to ${flightsData.departureFlights[0].arrivalAirport.city}`}
                 />
               )}
-              {flightsData.dönüşUçuşları.length > 0 && (
+              {flightsData.returnFlights.length > 0 && (
                 <Flights
-                  flights={flightsData.dönüşUçuşları}
-                  direction="Dönüş"
+                  flights={flightsData.returnFlights}
+                  direction={`${flightsData.returnFlights[0].departureAirport.city} to ${flightsData.returnFlights[0].arrivalAirport.city}`}
                 />
               )}
             </div>

@@ -1,0 +1,56 @@
+.container {
+  background-color: #1c7ed6;
+  padding: 2rem 4rem;
+}
+
+.form {
+  background-color: #e7f5ff;
+  border-radius: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
+}
+.direction {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.direction label {
+  margin-left: 0.3rem;
+}
+.input-container,
+.date-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+.input {
+  position: relative;
+  flex: 1;
+  /* display: flex;
+  flex-direction: column; */
+}
+.input label {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 1rem 2rem;
+  }
+  .direction {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 900px) {
+  .form {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .direction {
+    flex-direction: row;
+  }
+}
