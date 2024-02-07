@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+
 const { generateFlightsForFebruary } = require("./data/generateFlightData");
 
 // const flights = require("./data/flights.json");

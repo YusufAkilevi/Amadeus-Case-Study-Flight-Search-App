@@ -3,28 +3,38 @@ import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 
 import classes from "./Flights.module.css";
 import FlightDetail from "../FlightDetail/FlightDetail";
+import {
+  formatFlightDate,
+  formatFlightTime,
+  sortFlights,
+} from "../../utils/utilities";
+
+import SortButtons from "../SortButtons/SortButtons";
+
 const Flights = ({ flights, direction }) => {
   const [showDetail, setShowDetail] = useState("");
+  const [sortParam, setSortParam] = useState("");
 
-  const clickHandler = (e) => {
+  const detailsClickHandler = (e) => {
     if (e.target.id === showDetail) {
       setShowDetail("");
     } else {
       setShowDetail(e.target.id);
     }
   };
+
+  const sortButtonHandler = (e) => {
+    const { sorttype } = e.target.dataset;
+    setSortParam(sorttype);
+  };
+
   return (
     <div>
       <div className={classes.heading}>
         <h2>{direction}</h2>
-        <p>
-          {new Intl.DateTimeFormat("en-EN", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          }).format(new Date(flights[0].departureTime))}
-        </p>
+        <p>{formatFlightDate(flights[0].departureTime)}</p>
       </div>
+      <SortButtons sortParam={sortParam} onSort={sortButtonHandler} />
       <ul className={classes.flights}>
         <div key="title" className={classes.headings}>
           <p>Departure Time</p>
@@ -33,16 +43,12 @@ const Flights = ({ flights, direction }) => {
           <p>Price</p>
           <div></div>
         </div>
-        {flights.map((flight) => (
+        {sortFlights(flights, sortParam).map((flight) => (
           <li className={classes.flight} key={flight.flightCode}>
             <div className={classes.flightInfo}>
               <div>
                 <p className={classes["departure-time"]}>
-                  {new Date(flight.departureTime).toLocaleString("en-UK", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: false, // or false for 24-hour format
-                  })}
+                  {formatFlightTime(flight.departureTime)}
                 </p>
                 <div className={classes.airport}>
                   <span className={classes.code}>
@@ -61,11 +67,7 @@ const Flights = ({ flights, direction }) => {
               </div>
               <div>
                 <p className={classes["arrival-time"]}>
-                  {new Date(flight.arrivalTime).toLocaleString("en-UK", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: false, // or false for 24-hour format
-                  })}
+                  {formatFlightTime(flight.arrivalTime)}
                 </p>
                 <div className={classes.airport}>
                   <span className={classes.code}>
@@ -80,7 +82,7 @@ const Flights = ({ flights, direction }) => {
               <div className={classes.details}>
                 <button
                   id={flight.flightCode}
-                  onClick={clickHandler}
+                  onClick={detailsClickHandler}
                   className={classes["detail-button"]}
                 >
                   Details

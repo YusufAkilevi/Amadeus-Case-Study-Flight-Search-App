@@ -1,7 +1,6 @@
 import classes from "./FlightList.module.css";
 import Flights from "../Flights/Flights";
 import Loading from "../Loading/Loading";
-import { useEffect } from "react";
 
 const FlightList = ({ flightsData, isSearched, isLoading }) => {
   const isThereFlight =

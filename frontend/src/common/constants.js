@@ -3,7 +3,14 @@ export const DIRECTIONS = {
   DEPARTURE: "departure",
 };
 
-export const TRIPTYPE = {
+export const TRIPTYPES = {
   ONE_WAY: "one-way",
   ROUND_TRIP: "round-trip",
+};
+
+export const SORTINGTYPES = {
+  ARRIVAL: "arrival",
+  DEPARTURE: "departure",
+  PRICE: "price",
+  DURATION: "duration",
 };
