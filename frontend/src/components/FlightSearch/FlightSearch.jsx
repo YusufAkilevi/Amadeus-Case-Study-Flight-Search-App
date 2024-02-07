@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import classes from "./FlightSearch.module.css";
 import dayjs from "dayjs";
-import { DatePicker } from "@mui/x-date-pickers";
-import { LocalizationProvider } from "@mui/x-date-pickers";
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { Autocomplete, TextField, useThemeProps } from "@mui/material";
+import { Autocomplete, TextField } from "@mui/material";
 import Button from "@mui/material/Button";
-import AirportOptions from "../AirportOptions/AirportOptions";
-import { DIRECTIONS } from "../../common/constants";
+import SearchIcon from "@mui/icons-material/Search";
+
+import classes from "./FlightSearch.module.css";
+import { DIRECTIONS, TRIPTYPE } from "../../common/constants";
 
 const getAirportOptions = async (query, setOptions) => {
   if (query.length !== 0) {
@@ -36,11 +36,7 @@ const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
   const [returnDate, setReturnDate] = useState("");
 
   const [departureAirportOptions, setDepartureAirportOptions] = useState([]);
-  const [showDepartureAirportOptions, setShowDepartureAirportOptions] =
-    useState(false);
   const [arrivalAirportOptions, setArrivalAirportOptions] = useState([]);
-  const [showArrivalAirportOptions, setShowArrivalAirportOptions] =
-    useState(false);
 
   useEffect(() => {
     onGetIsLoading(isLoading);
@@ -52,35 +48,17 @@ const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
 
   const placeChangeHandler = async (e) => {
     const { value, id } = e.target;
-    if (id === "departure") {
-      setDepartureAirport(value);
-      setShowDepartureAirportOptions(true);
+    if (id === DIRECTIONS.DEPARTURE) {
       await getAirportOptions(value, setDepartureAirportOptions);
-    } else if (id === "arrival") {
-      // setArrivalAirport(value);
-      setShowArrivalAirportOptions(true);
+    } else if (id === DIRECTIONS.ARRIVAL) {
       await getAirportOptions(value, setArrivalAirportOptions);
     }
   };
-  const focusChangeHandler = (e) => {
-    const { id } = e.target;
-    // if (id === DIRECTIONS.DEPARTURE) {
-    //   setShowDepartureAirportOptions(false);
-    // } else if (id === "arrival") {
-    //   setShowArrivalAirportOptions(false);
-    // }
-    setTimeout(() => {
-      if (id === "departure") {
-        setShowDepartureAirportOptions(false);
-      } else if (id === "arrival") {
-        setShowArrivalAirportOptions(false);
-      }
-    }, 200);
-  };
+
   const directionHandler = (e) => {
-    if (e.target.value === "one-way") {
+    if (e.target.value === TRIPTYPE.ONE_WAY) {
       setReturnDate("");
-    } else if (e.target.value === "round-trip") {
+    } else if (e.target.value === TRIPTYPE.ROUND_TRIP) {
       setReturnDate();
     }
     setDirection(e.target.value);
@@ -106,13 +84,7 @@ const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
         setIsLoading(false);
       });
   };
-  const selectAirportHandler = (airport, type) => {
-    if (type === "departure") {
-      setDepartureAirport(airport);
-    } else if (type === "arrival") {
-      setArrivalAirport(airport);
-    }
-  };
+
   return (
     <div className={classes.container}>
       <form className={classes.form} onSubmit={submitHandler}>
@@ -122,7 +94,7 @@ const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
               onClick={directionHandler}
               type="radio"
               name="direction"
-              value="one-way"
+              value={TRIPTYPE.ONE_WAY}
               defaultChecked
             />
             <label htmlFor="">One way</label>
@@ -132,30 +104,13 @@ const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
               onClick={directionHandler}
               type="radio"
               name="direction"
-              value="round-trip"
+              value={TRIPTYPE.ROUND_TRIP}
             />
             <label htmlFor="direction">Round trip</label>
           </div>
         </div>
         <div className={classes["input-container"]}>
           <div className={classes.input}>
-            {/* <TextField
-              id="departure"
-              label="From"
-              // size="small"
-              fullWidth
-              value={departureAirport?.name}
-              onChange={placeChangeHandler}
-              onBlur={focusChangeHandler}
-            />
-            {departureAirportOptions.length > 0 &&
-              showDepartureAirportOptions && (
-                <AirportOptions
-                  type="departure"
-                  airportOptions={departureAirportOptions}
-                  onSelect={selectAirportHandler}
-                />
-              )} */}
             <Autocomplete
               id="departure"
               // sx={{ width: 200 }}
@@ -175,22 +130,6 @@ const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
             />
           </div>
           <div className={classes.input}>
-            {/* <TextField
-              id="arrival"
-              label="To"
-              // size="small"
-              fullWidth
-              value={arrivalAirport?.name}
-              onChange={placeChangeHandler}
-              onBlur={focusChangeHandler}
-            />
-            {arrivalAirportOptions.length > 0 && showArrivalAirportOptions && (
-              <AirportOptions
-                type="arrival"
-                airportOptions={arrivalAirportOptions}
-                onSelect={selectAirportHandler}
-              />
-            )} */}
             <Autocomplete
               id="arrival"
               // sx={{ width: 300 }}
@@ -212,25 +151,29 @@ const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
         </div>
         <div className={classes["date-container"]}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker
-              size="small"
-              minDate={dayjs("2024-02-01")}
-              maxDate={dayjs("2024-02-29")}
-              label="Departure Date"
-              onChange={setDepartureDate}
-            />
-            <DatePicker
-              onChange={setReturnDate}
-              size="small"
-              disabled={direction === "one-way" ? true : false}
-              minDate={dayjs("2024-02-01")}
-              maxDate={dayjs("2024-02-29")}
-              label="Return Date"
-            />
+            <div className={classes.date}>
+              <DatePicker
+                sx={{ width: "100%" }}
+                minDate={dayjs("2024-02-01")}
+                maxDate={dayjs("2024-02-29")}
+                label="Departure Date"
+                onChange={setDepartureDate}
+              />
+            </div>
+            <div className={classes.date}>
+              <DatePicker
+                onChange={setReturnDate}
+                sx={{ width: "100%" }}
+                disabled={direction === TRIPTYPE.ONE_WAY ? true : false}
+                minDate={dayjs("2024-02-01")}
+                maxDate={dayjs("2024-02-29")}
+                label="Return Date"
+              />
+            </div>
           </LocalizationProvider>
         </div>
         <Button onClick={submitHandler} variant="contained">
-          Search Flight
+          <SearchIcon />
         </Button>
       </form>
     </div>
