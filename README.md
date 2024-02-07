@@ -46,6 +46,76 @@ In the other terminal, start the Node.js server for the backend:
 
 5. Access the Application: Open your browser and visit http://localhost:5173 to see the frontend application. The backend server is accessible at http://localhost:3000
 
+## Supported Airports and Cities
+
+Our flight search app is designed to help you find flights to and from a select list of airports around the world. To ensure the best user experience, we currently support searches involving the following airports and their respective cities. Please note that our app's functionality is limited to these locations at this time.
+
+### Asia
+
+- **HND** - Haneda Airport, Tokyo, Japan
+- **PEK** - Beijing Capital International Airport, Beijing, China
+- **HKG** - Hong Kong International Airport, Chek Lap Kok, New Territories, Hong Kong
+- **SIN** - Changi Airport, Singapore, Singapore
+
+### Australia
+
+- **SYD** - Sydney Airport, Sydney, Australia
+
+### Europe
+
+- **LHR** - Heathrow Airport, London, United Kingdom
+- **CDG** - Charles de Gaulle Airport, Paris, France
+- **FRA** - Frankfurt Airport, Frankfurt, Germany
+- **AMS** - Amsterdam Airport Schiphol, Amsterdam, Netherlands
+- **ZRH** - Zurich Airport, Zurich, Switzerland
+- **MAD** - Madrid-Barajas Airport, Madrid, Spain
+- **LIS** - Lisbon Airport, Lisbon, Portugal
+- **FCO** - Leonardo da Vinci–Fiumicino Airport, Rome, Italy
+- **VIE** - Vienna International Airport, Vienna, Austria
+- **BUD** - Budapest Ferenc Liszt International Airport, Budapest, Hungary
+- **HEL** - Helsinki-Vantaa Airport, Helsinki, Finland
+- **OSL** - Oslo Airport, Gardermoen, Oslo, Norway
+- **ARN** - Stockholm Arlanda Airport, Stockholm, Sweden
+- **CPH** - Copenhagen Airport, Copenhagen, Denmark
+- **DUB** - Dublin Airport, Dublin, Ireland
+- **EDI** - Edinburgh Airport, Edinburgh, United Kingdom
+- **MUC** - Munich Airport, Munich, Germany
+- **BRU** - Brussels Airport, Brussels, Belgium
+
+### Middle East
+
+- **DXB** - Dubai International Airport, Dubai, United Arab Emirates
+
+### North America
+
+- **LAX** - Los Angeles International Airport, Los Angeles, United States
+- **JFK** - John F. Kennedy International Airport, New York City, United States
+- **YYZ** - Toronto Pearson International Airport, Toronto, Canada
+- **MEX** - Mexico City International Airport, Mexico City, Mexico
+
+### South America
+
+- **GIG** - Rio de Janeiro/Galeão – Antonio Carlos Jobim International Airport, Rio de Janeiro, Brazil
+- **EZE** - Ministro Pistarini International Airport, Buenos Aires, Argentina
+
+### Africa
+
+- **CPT** - Cape Town International Airport, Cape Town, South Africa
+
+### Turkey
+
+- **ADA** - Şakirpaşa Airport, Adana
+- **GZP** - Gazipaşa Airport, Alanya
+- **ESB** - Esenboğa International Airport, Ankara
+- **AYT** - Antalya Airport, Antalya
+- **BJV** - Milas–Bodrum Airport, Bodrum
+- **IST** - Istanbul Airport, Istanbul
+- **SAW** - Sabiha Gökçen International Airport, Istanbul
+- **ADB** - Adnan Menderes Airport, İzmir
+- **NAV** - Kapadokya Airport, Nevşehir
+
+Please ensure your flight search queries involve these airports to guarantee accurate search results. We are constantly working to expand our list of supported airports and appreciate your understanding.
+
 ## Overview
 
 ### The challenge
@@ -77,22 +147,26 @@ Bir uçuş arama uygulaması için frontend application geliştirilecek.
 ### Links
 
 - Solution URL: [https://github.com/YusufAkilevi/Amadeus-Case-Study-Flight-Search-App](https://github.com/YusufAkilevi/Amadeus-Case-Study-Flight-Search-App)
+- Live URL: [https://flight-search-app-yakilevs.netlify.app/](https://flight-search-app-yakilevs.netlify.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS
+- CSS Modules
 - Flexbox
 - CSS Grid
+- Material UI
 - Desktop-first workflow
+- Javascript
+- dayjs
 - [React](https://reactjs.org/) - JS library
-- [ReduxToolkit](https://redux-toolkit.js.org/tutorials/quick-start)
-- [Router](https://reactrouter.com/en/main)
 - Node.js
 - Express.js
+- Vite
 
 ## Author
 
 - GitHub - [@YusufAkilevi](https://github.com/YusufAkilevi)
+- Website - [@YusufAkilevi](https://yusufakilevi.netlify.app/)
