@@ -1,3 +1,4 @@
+// Import necessary hooks and components from React, MUI, and other libraries
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
@@ -5,10 +6,13 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { Autocomplete, TextField } from "@mui/material";
 import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
-import "dayjs/locale/tr";
+import "dayjs/locale/tr"; // Import Turkish locale for dayjs
 
+// Import custom CSS module for styling
 import classes from "./FlightSearch.module.css";
+// Import constants used in the component
 import { DIRECTIONS, TRIPTYPES, DATEPICKER } from "../../common/constants";
+// Utility function to fetch airport options based on user input
 import { getAirportOptions } from "../../utils/utilities";
 
 const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
@@ -24,7 +28,7 @@ const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
 
   const [departureAirportOptions, setDepartureAirportOptions] = useState([]);
   const [arrivalAirportOptions, setArrivalAirportOptions] = useState([]);
-
+  // State for managing input validation errors
   const [error, setError] = useState({
     departureAirport: false,
     arrivalAirport: false,
@@ -40,6 +44,7 @@ const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
     onGetIsSearched(isSearched);
   }, [isSearched]);
 
+  // Handler for airport input changes, fetching airport options based on input
   const placeChangeHandler = async (e) => {
     const { value, id } = e.target;
     console.log("clicke");
@@ -82,7 +87,7 @@ const FlightSearch = ({ onGetIsLoading, onGetIsSearched, onGetFlights }) => {
     e.preventDefault();
     setIsLoading(true);
     setIsSearched(true);
-
+    // Validate required fields before proceeding
     if (
       !departureAirport ||
       !arrivalAirport ||
